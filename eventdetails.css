@@ -1,0 +1,42 @@
+body {
+    background-color: #000000;
+    color: white;
+}
+
+.navbar {
+    background-color: #000000;
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: #ffeb3b !important;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.event-card {
+    background-color: #495057;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.event-card h2 {
+    color: #ffeb3b;
+}
+
+.event-card .btn-primary {
+    background-color: #28a745;
+    border: none;
+}
+
+.event-card .btn-warning {
+    background-color: #ffc107;
+    border: none;
+}
+
+

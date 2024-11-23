@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for ISTE Events</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="indexstyle.css">
+    <link rel="stylesheet" href="registrationstyle.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
+        <a class="navbar-brand" href="https://kec-iste.onrender.com/">ISTE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="event-details.html">Event Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="registration.html">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <!-- Registration Form Content -->
+    <div class="container mt-5 pt-5">
+        <h2>Register for ISTE Events</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="event">Select Event</label>
+                <select class="form-control" id="event" name="event">
+                    <option>Workshop on AI and Machine Learning</option>
+                    <option>Web Development Bootcamp</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-glow ripple-btn">Submit</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2024 ISTE Events. All rights reserved.</p>
+      <p>
+          <a href="https://membership.isteonline.in/privacy-policy" target="_blank">Privacy Policy</a> | 
+          <a href="https://membership.isteonline.in/terms-and-conditions" target="_blank">Terms of Service</a>
+      </p>
+  </footer>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const eventSelected = document.getElementById('event').value;
+        
+        // Display alert with the entered data
+        alert(`Thank you ${name}! You have successfully registered for the ${eventSelected} event with the email ${email}.`);
+      });
+    </script>
+    
+</body>
+</html>

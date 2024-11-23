@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - ISTE</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="indexstyle.css" type="text/css">
+    <link rel="stylesheet" href="eventdetails.css" type="text/css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="https://kec-iste.onrender.com/" target="_blank">ISTE-EVENTS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="event-details.html">Event Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="registration.html">Register</a>
+                </li>
+                <li class="nav-item">   
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+
+                <!-- Cart Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="cartDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Cart
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="cartDropdown" id="cartDropdownMenu">
+                        <p class="dropdown-item">No items in cart</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Event Details Section -->
+    <div class="container mt-5">
+        <h1 class="text-center text-light mb-4">Event Details</h1>
+
+        <!-- Event 1 -->
+        <div class="event-card mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="./images/event1.png" alt="Event Image" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <h2>Machine Learning Workshop</h2>
+                    <p><strong>Date:</strong> September 30, 2024</p>
+                    <p><strong>Time:</strong> 10:00 AM - 4:00 PM</p>
+                    <p><strong>Location:</strong> IT PARK (SEMINAR HALL 2), KEC</p>
+                    <p><strong>Description:</strong> Join us for an exciting day of workshops, keynote speakers, and networking opportunities. This event will cover the latest advancements in technology and provide hands-on experience with cutting-edge tools and techniques.</p>
+                    <div class="countdown" id="timer1" style="color:aqua"></div> <br><!-- Countdown timer for event 1 -->
+                    <a href="registration.html" class="btn btn-primary">Register Now</a>
+                    <a href="#" class="btn btn-warning" onclick="addToCart('Machine Learning Workshop')">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="event-card mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="./images/event2.png" alt="Event Image" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <h2>DevOps Hands-On Workshop</h2>
+                    <p><strong>Date:</strong> October 15, 2024</p>
+                    <p><strong>Time:</strong> 1:00 PM - 5:00 PM</p>
+                    <p><strong>Location:</strong> AB BLOCK , KEC College</p>
+                    <p><strong>Description:</strong> A focused workshop on the future of AI and machine learning. Learn from industry experts and gain insights into emerging trends and applications.</p>
+                    <div class="countdown" id="timer2" style="color:aqua"></div> <br><!-- Countdown timer for event 2 -->
+                    <a href="registration.html" class="btn btn-primary">Register Now</a>
+                    <a href="#" class="btn btn-warning" onclick="addToCart('DevOps Hands-On Workshop')">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="event-card">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="./images/event3.png" alt="Event Image" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <h2>AI & Data Science Symposium</h2>
+                    <p><strong>Date:</strong> November 1, 2024</p>
+                    <p><strong>Time:</strong> 9:00 AM - 3:00 PM</p>
+                    <p><strong>Location:</strong> IT PARK(SEMINAR HALL 1), KEC</p>
+                    <p><strong>Description:</strong> A full-day symposium focused on artificial intelligence and data science, featuring keynote speakers from top tech companies.</p>
+                    <div class="countdown" id="timer3" style="color:aqua"></div> <br><!-- Countdown timer for event 3 -->
+                    <a href="registration.html" class="btn btn-primary">Register Now</a>
+                    <a href="#" class="btn btn-warning" onclick="addToCart('AI & Data Science Symposium')">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 ISTE Events. All rights reserved.</p>
+        <p>
+            <a href="https://membership.isteonline.in/privacy-policy" target="_blank">Privacy Policy</a> | 
+            <a href="https://membership.isteonline.in/terms-and-conditions" target="_blank">Terms of Service</a>
+        </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        function initializeTimer(eventId, eventDate) {
+            const countDownDate = new Date(eventDate).getTime();
+            const timerElement = document.getElementById(eventId);
+
+            const x = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                timerElement.innerHTML = `<strong>Time Remaining:</strong> ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    timerElement.innerHTML = "This event has started!";
+                }
+            }, 1000);
+        }
+
+        // Initialize countdowns for events
+        initializeTimer('timer1', 'September 30, 2024 10:00:00');
+        initializeTimer('timer2', 'October 15, 2024 13:00:00');
+        initializeTimer('timer3', 'November 1, 2024 09:00:00');
+    </script>
+
+    <!-- Add to Cart Script -->
+    <script>
+        let cart = [];
+
+        function addToCart(eventName) {
+            cart.push(eventName);
+            updateCartDropdown();
+        }
+
+        function updateCartDropdown() {
+            const cartDropdownMenu = document.getElementById('cartDropdownMenu');
+            cartDropdownMenu.innerHTML = ''; // Clear the existing cart list
+
+            if (cart.length === 0) {
+                cartDropdownMenu.innerHTML = '<p class="dropdown-item">No items in cart</p>';
+            } else {
+                cart.forEach(event => {
+                    const item = document.createElement('a');
+                    item.className = 'dropdown-item';
+                    item.href = 'registration.html'; // Redirect to registration page
+                    item.textContent = event;
+                    cartDropdownMenu.appendChild(item);
+                });
+            }
+        }
+    </script>
+    <script>
+         cart = [];
+    
+        function addToCart(eventName) {
+            cart.push(eventName);
+            updateCartDropdown();
+            alert(eventName + " has been added to your cart!"); // Add alert here
+        }
+    
+        function updateCartDropdown() {
+            const cartDropdownMenu = document.getElementById('cartDropdownMenu');
+            cartDropdownMenu.innerHTML = ''; // Clear the existing cart list
+    
+            if (cart.length === 0) {
+                cartDropdownMenu.innerHTML = '<p class="dropdown-item">No items in cart</p>';
+            } else {
+                cart.forEach(event => {
+                    const item = document.createElement('a');
+                    item.className = 'dropdown-item';
+                    item.href = 'registration.html'; // Redirect to registration page
+                    item.textContent = event;
+                    cartDropdownMenu.appendChild(item);
+                });
+            }
+        }
+    </script>
+    
+    
+
+</body>
+</html>
